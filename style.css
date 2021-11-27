@@ -49,9 +49,9 @@ body{
     background-color: #778beb;
 }
 .green{
-    background-color: green;
+    background-color: #b8e994;
 }
-.black{
+.yellow{
     background-color: #f7d794;
 }
 .actionbox>*:hover{
@@ -60,5 +60,40 @@ body{
 }
 .priority>*:hover{
     cursor: pointer;
-    /* background-color: #b2bec3; */
+    
+}
+.modal{
+    height: 50vh;
+    width: 45vw;
+    background-color: #f7d794;
+    position: absolute;
+    top: calc(50% - 25vh + 2.25rem);
+    left: calc(50% - 22.5vw);
+    display: none;
+}
+.textmodal{
+    resize: none;
+    height: 100%;
+    width: 75%;
+    background-color: #ecf0f1;
+    border: none;
+    outline: none;
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+.colormodal{
+    background-color: #535c68;
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.color{
+    height: 2rem;
+    width: 60%;
+}
+.border{
+    border: 3px solid red;
 }
