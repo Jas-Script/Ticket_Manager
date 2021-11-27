@@ -97,3 +97,26 @@ body{
 .border{
     border: 3px solid red;
 }
+.ticket{
+    height: 12rem;
+    width: 17rem;
+    background-color: #f7f1e3;
+}
+.ticket_color{
+    height: 1rem;
+    background-color: #cf6a87;
+}
+.ticket_id{
+    height: 2rem;
+    padding: 0.6rem;
+}
+.ticket_text{
+    height: calc(100% - 2rem - 1rem);
+    padding: 0.6rem;
+}
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 2rem;
+}
