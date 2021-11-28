@@ -104,7 +104,7 @@ body{
 }
 .ticket_color{
     height: 1rem;
-    background-color: #cf6a87;
+    /* background-color: #cf6a87; */
 }
 .ticket_id{
     height: 2rem;

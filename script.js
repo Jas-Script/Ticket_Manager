@@ -3,9 +3,10 @@ let modalcont=document.querySelector('.modal');
 let addflag=false;
 let main=document.querySelector('.main');
 let text= document.querySelector('.textmodal');
+let allprioritycolors=document.querySelectorAll('.color');
+let colors=["red","green","blue","yellow"];
+let modalprioritycolor=colors[colors.length-1];
 addbtn.addEventListener('click',function(){
-    
-
     addflag=!addflag;
     console.log(addflag);
     if(addflag){
@@ -16,21 +17,32 @@ addbtn.addEventListener('click',function(){
     }
 
 });
+allprioritycolors.forEach((colorElem, idx) => {
+    colorElem.addEventListener("click", (e) => {
+        allprioritycolors.forEach((priorityColorElem, idx) => {
+            priorityColorElem.classList.remove("border");
+        })
+        colorElem.classList.add("border");
+
+        modalprioritycolor = colorElem.classList[0];
+    })
+})
+
 modalcont.addEventListener('keydown',function(e){
     let key=e.key;
     if(key==="Shift"){
-        create_ticket();
+        create_ticket(modalprioritycolor,shortid(),text.value);
         modalcont.style.display='none';
         addflag=false;
         text.value="";
     }
 });
-function create_ticket(){
+function create_ticket(ticketcolor,ticketid,tickettext){
     let ticketcon=document.createElement('div');
     ticketcon.setAttribute('class','ticket');
-    ticketcon.innerHTML=`<div class="ticket_color"></div>
-    <div class="ticket_id">#id2021</div>
-    <div class="ticket_text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, ea obcaecati? Veniam, consequuntur. A aliquam tempore quod? Eum molestias quisquam commodi quos quae laborum quaerat.</div>
+    ticketcon.innerHTML=`<div class="ticket_color ${ticketcolor}"></div>
+    <div class="ticket_id">#${ticketid}</div>
+    <div class="ticket_text">${tickettext}</div>
         `;
         main.appendChild(ticketcon);
 }
